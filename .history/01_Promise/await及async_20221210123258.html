@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>await及async</title>
+  </head>
+  <body>
+    <h2>一个函数如果加上 async ，那么该函数就会返回一个 Promise。</h2>
+    <script>
+      /* 
+     async 就是将函数返回值使用 Promise.resolve() 包裹了下，和 then 中处理返回值一样，并且 await 只能配套 async 使用。
+      async function test() {
+        return 1;
+      }
+      console.log(test()); 
+    
+      */
+      //   目前 await 可以直接脱离 async 在顶层调用，但是需要在 ESM 模块中。Chrome 中可以没有模块限制，但是这只是 V8 的一个特性。
+      /* 
+      async function test() {
+        let value = await sleep();
+      } 
+      */
+      //   async 和 await 可以说是异步终极解决方案了，相比直接使用 Promise 来说，优势在于处理 then 的调用链，能够更清晰准确的写出代码，毕竟写一大堆 then 也很恶心，并且也能优雅地解决回调地狱问题。
+    </script>
+  </body>
+</html>
